@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Phase 3 static demonstration record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "data_kind",
+    "session_id",
+    "manifest_hash",
+    "definitions",
+    "condition",
+    "snapshots",
+    "action_sets",
+    "stimuli",
+    "responses",
+    "events",
+    "corrections",
+    "question_contract"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "household-demo-4.0.0"
+    },
+    "data_kind": {
+      "enum": [
+        "demonstration",
+        "synthetic"
+      ]
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "seed": {
+      "type": "integer"
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "finished_at": {},
+    "phase": {},
+    "manifest_hash": {
+      "type": "string"
+    },
+    "scene_id": {
+      "type": "string"
+    },
+    "definitions": {
+      "type": "object"
+    },
+    "condition": {
+      "type": "object"
+    },
+    "private_layout": {
+      "type": "object"
+    },
+    "working_layout": {
+      "type": "object"
+    },
+    "snapshots": {
+      "type": "object"
+    },
+    "action_sets": {
+      "type": "object"
+    },
+    "stimuli": {
+      "type": "array"
+    },
+    "responses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "response_id",
+          "stimulus_id",
+          "construct",
+          "value",
+          "missing_reason",
+          "shown_layout_id",
+          "answered_at",
+          "target_layout_id"
+        ],
+        "properties": {
+          "value": {
+            "type": [
+              "string",
+              "integer",
+              "null"
+            ]
+          },
+          "missing_reason": {
+            "enum": [
+              null,
+              "skip",
+              "unsure",
+              "not_inspected"
+            ]
+          },
+          "construct": {
+            "enum": [
+              "object_tolerance",
+              "complete_tolerance",
+              "private_satisfaction",
+              "personal_response",
+              "support_response",
+              "shared_pair_choice",
+              "correction_endorsement"
+            ]
+          }
+        }
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "event_id",
+          "sequence",
+          "type",
+          "timestamp",
+          "phase",
+          "task_context",
+          "shown_layout_id"
+        ],
+        "properties": {
+          "sequence": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "type": {
+            "type": "string"
+          },
+          "task_context": {
+            "enum": [
+              "private",
+              "shared"
+            ]
+          },
+          "shown_layout_id": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "context": {
+      "type": "object"
+    },
+    "corrections": {
+      "type": "array"
+    },
+    "missing_design_cells": {
+      "type": "array"
+    },
+    "phase_times": {
+      "type": "array"
+    },
+    "phase_started_at": {},
+    "question_index": {},
+    "shared_index": {},
+    "shared_candidates": {},
+    "history": {},
+    "query_assignment": {},
+    "derived_examples": {
+      "type": "array"
+    },
+    "feedback": {},
+    "private_context": {},
+    "practice_moves": {},
+    "correction": {},
+    "correction_basis": {},
+    "unavailable_placement": {},
+    "shared_choice": {},
+    "question_contract": {
+      "type": "object"
+    },
+    "build_info": {
+      "type": "object"
+    }
+  }
+}

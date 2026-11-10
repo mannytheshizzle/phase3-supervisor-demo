@@ -1,0 +1,37 @@
+name: Publish approved demo release
+on:
+  workflow_dispatch:
+    inputs:
+      approval:
+        description: 'Only after owner approval: type PUBLISH_DEMO'
+        type: string
+        required: true
+permissions:
+  contents: read
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  verify:
+    if: inputs.approval == 'PUBLISH_DEMO'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify exact approved static release
+        run: python3 verify_release.py
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+  deploy:
+    needs: verify
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish approved artifact
+        id: deployment
+        uses: actions/deploy-pages@v4

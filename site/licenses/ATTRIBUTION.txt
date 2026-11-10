@@ -1,0 +1,58 @@
+THIRD-PARTY ASSETS — NON-COMMERCIAL RESEARCH PROTOTYPE
+
+Every included GLB and the Basis runtime files are listed with source revision,
+source file, licence and SHA-256 hashes in ASSET_PROVENANCE.json beside this file.
+Assets and notices retain their own licences; no blanket application-code
+licence overrides them. No endorsement by any dataset/software author is implied.
+
+HSSD — 144 unique included GLBs, including the room, furniture, open-front
+bookcase, laptop, notebook, headphones and tissue box.
+Habitat Synthetic Scenes Dataset by Mukul Khanna, Yongsen Mao, Hanxiao Jiang,
+Sanjay Haresh, Brennan Shacklett, Dhruv Batra, Alexander Clegg, Eric Undersander,
+Angel X. Chang and Manolis Savva.
+Source: https://huggingface.co/datasets/hssd/hssd-hab
+Project/credits: https://3dlg-hcvc.github.io/hssd/
+Installed revision: 4369cb9876214c7fbebcf552eb532380e4d287e4
+Licence: CC BY-NC 4.0 — https://creativecommons.org/licenses/by-nc/4.0/
+Supplied dataset card: HSSD_README.md.
+Modifications: selected browser subset; scene composition removes piano/stool,
+adds an existing HSSD bookcase, and supplies browser transforms/cutaway views.
+The GLB payloads themselves match the installed source revision.
+
+ReplicaCAD — two GLBs: frl_apartment_book_02 and frl_apartment_remote-control_01.
+Copyright (c) Facebook, Inc. and its affiliates.
+Source: https://huggingface.co/datasets/ai-habitat/ReplicaCAD_dataset
+Installed revision: 6be07e532c83c5799a6e96152f926d07838c2084
+The LICENSE.txt supplied with this exact revision states CC BY-NC 4.0:
+https://creativecommons.org/licenses/by-nc/4.0/ (retained as ReplicaCAD.txt).
+The current official project page and dataset card instead state CC BY 4.0:
+https://aihabitat.org/datasets/replica_cad/
+This non-commercial prototype preserves and complies with the installed
+CC BY-NC notice; it does not assert retrospective relicensing or remove the
+supplied restriction. Both statements permit this non-commercial attributed
+redistribution. See REPLICACAD_LICENSE_CONTEXT.md for the evidence.
+Modifications: selected subset and runtime placement/orientation; GLB files
+are byte-identical to the installed source revision.
+
+YCB — six objects: 003_cracker_box, 024_bowl, 025_mug, 029_plate,
+031_spoon and 033_spatula.
+YCB Object and Model Set; original credit/source supplied by this distribution:
+https://www.ycbbenchmarks.com/
+Habitat distribution: https://huggingface.co/datasets/ai-habitat/ycb
+Installed revision: 29be64fdd95b4881f244152ad653058e0a48c28f
+Licence: CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+Retained notice: YCB.txt, including the distributor's prior modification notice.
+Browser modification: retain installed geometry and replace legacy Basis texture
+references with the existing original embedded PNG textures. Every output was
+reproduced exactly using the existing exporter; no replacement dataset downloaded.
+
+SOFTWARE
+Three.js 0.180.0 and its bundled addons: MIT; copyright Three.js authors.
+Source: https://github.com/mrdoob/three.js/tree/r180 ; full notice: Three.txt.
+Basis Universal transcoder JS/WASM distributed with Three.js r180:
+https://github.com/mrdoob/three.js/tree/r180/examples/jsm/libs/basis
+Upstream: https://github.com/BinomialLLC/basis_universal
+Apache-2.0; full upstream licence/copyright: Basis-Apache-2.0.txt.
+Both distributed runtime files match the installed Three.js package.
+Vite 6.4.3 builds the browser bundle; its licence/third-party notice is Vite.txt.
+No extra fonts, stock imagery, UI kits or downloaded decorative assets are used.
